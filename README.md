@@ -207,8 +207,44 @@ House Targaryen - Fire and Blood
 
 House Lannister - A Lannister always pays his debts
 ```
+Answer
+```
+func houseWords() {
+    switch self {
+    case .baratheon:
+        print("Ours is the Fury")
+    case .stark:
+        print("Winter is Coming")
+    case .targaryen:
+        print("Fire and Blood")
+    case .lannister:
+        print("Hear Me Roar")
+}
+}
+```
 
 b. Move that function to inside the enum as a method
+```
+enum GameOfThronesHouse: String {
+    case stark, lannister, targaryen, baratheon
+    
+    func houseWords() {
+        switch self {
+        case .baratheon:
+            print("Ours is the Fury")
+        case .stark:
+            print("Winter is Coming")
+        case .targaryen:
+            print("Fire and Blood")
+        case .lannister:
+            print("Hear Me Roar")
+    }
+    }
+}
+
+let houseStark = GameOfThronesHouse.stark
+houseStark.houseWords()
+```
 
 ## Question 9
 
@@ -230,8 +266,12 @@ class MusicLibrary {
 let library1 = MusicLibrary()
 library1.add(track: "Michelle")
 library1.add(track: "Voodoo Child")
-let library2 = library
+let library2 = library1
 library2.add(track: "Come As You Are")
+```
+Answer
+```
+The contents of 'library1' are 2 Strings, "Michelle" and "Voodoo Child". The tracks are added using the .add() method. The contents of 'library2' hold that of 'library1' just with another String added, "Come As You Are". ("Come As You Are" is only in 'library2' and not 'library1').
 ```
 
 ## Question 10
@@ -242,4 +282,10 @@ Make a function that takes in an array of strings and returns an array of string
 Input: ["Hello", "Alaska", "Dad", "Peace", "Power"]
 
 Output: ["Alaska", "Dad", "Power"]
+```
+Answer
+```
+func randomStrings(input: [String]) -> [String] {
+
+}
 ```
