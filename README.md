@@ -108,6 +108,12 @@ Input: [[2,4,1],[3,0],[9,3]]
 
 Output: [9,3]
 ```
+Answer
+```
+func largestInArray() -> [Int] {
+
+}
+```
 
 ## Question 5
 
@@ -193,12 +199,70 @@ The struct above does not compile because the balance variable is not mutable in
 ```
 
 b. Add a property called `deposits` of type `[Double]` that stores all of the deposits made to the bank account
+```
+struct BankAccount {
+    var owner: String
+    var balance: Double
+    ** var deposits: Double **
+
+    mutating func deposit(_ amount: Double) {
+        balance += amount
+        deposit = balance
+    }
+
+    mutating func withdraw(_ amount: Double) {
+        balance -= amount
+    }
+}
+```
 
 c. Add a property called `withdraws` of type `[Double]` that stores all of the withdraws made to the bank account
+```
+struct BankAccount {
+    var owner: String
+    var balance: Double
+    var deposits: Double
+    ** var withdrawal: Double **
+
+    mutating func deposit(_ amount: Double) {
+        balance += amount
+    }
+
+    mutating func withdraw(_ amount: Double) {
+        balance -= amount
+        withdrawal = balance
+    }
+}
+```
 
 d. Add a property called `startingBalance`.  Have this property be set to the original balance, and don't allow anyone to change it
+```
+struct BankAccount {
+    var owner: String
+    var balance: Double
+    var deposits: Double
+    var withdrawal: Double
+    var startingBalance: Double
+
+    mutating func deposit(_ amount: Double) {
+        startingBalance = balance
+        balance += amount
+    }
+
+    mutating func withdraw(_ amount: Double) {
+        startingBalance = balance
+        balance -= amount
+        withdrawal = balance
+    }
+}
+```
 
 e. Add a method called `totalGrowth` that returns a double representing the change in the balance from the starting balance to the current balance
+```
+mutating func totalGrowth(_ withdraw: Double, _ insert: Double) -> Double {
+      return balance = insert - withdraw
+       }
+```
 
 ## Question 8
 
