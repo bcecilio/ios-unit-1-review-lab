@@ -152,6 +152,11 @@ fred.name = "Brick"
 fred.weight = 999.2
 fred.homePlanet = "Mars"
 ```
+Answer
+```
+The code above will not run because 'homePlanet' within the Class is a constant, so none of the reaasignments will compile.
+let homePlanet: String -> var homePlanet: String
+```
 
 b. Using the Giant class. What will the value of `edgar.name` be after the code below runs? How about `jason.name`? Explain why.
 
@@ -159,6 +164,10 @@ b. Using the Giant class. What will the value of `edgar.name` be after the code 
 let edgar = Giant(name: "Edgar", weight: 520.0, homePlanet: "Earth")
 let jason = edgar
 jason.name = "Jason"
+```
+Answer
+```
+Using the Giant class the value of jason will be stored in the constant 'edgar'. The compiler will print the String "Jason" in both the 'edgar' and 'jason' constants.
 ```
 
 ## Question 7
@@ -179,6 +188,9 @@ struct BankAccount {
 ```
 
 a. Explain why the code above doesn't compile, then fix it.
+```
+The struct above does not compile because the balance variable is not mutable in the functions. In order to make 'balance' mutable we must add 'mutating' at the beginning of the function lines.
+```
 
 b. Add a property called `deposits` of type `[Double]` that stores all of the deposits made to the bank account
 
