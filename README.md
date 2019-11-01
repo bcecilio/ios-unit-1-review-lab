@@ -270,9 +270,9 @@ struct BankAccount {
 
 e. Add a method called `totalGrowth` that returns a double representing the change in the balance from the starting balance to the current balance
 ```
-mutating func totalGrowth(_ withdraw: Double, _ insert: Double) -> Double {
-      return balance = insert - withdraw
-       }
+private var startingBal: Double { 
+    didSet {startingBal = balance}
+}
 ```
 
 ## Question 8
